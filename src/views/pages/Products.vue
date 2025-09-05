@@ -19,11 +19,12 @@ function addToCart(product){
   cartStore.addToCart({id:product.id,price:product.price,quantity:1})
 }
 function removeItem(product){
-  cartStore.removeFromCart(product.id)
-  alert('removed successfully')
+  if(confirm('are you sure you want to remove this product?')){
+    cartStore.removeFromCart(product.id)
+    }else{
+      console.log('user cancelled removal')
+    }
 }
-
-console.log(cartCount.value);
 </script>
 
 <template>
