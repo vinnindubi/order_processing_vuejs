@@ -31,7 +31,6 @@ function loadCartInstance(){
         const get= (cart.value)as Cart
         get.products= get.products.filter( p =>p.id!==id)
         localStorage.setItem('cart',JSON.stringify(cart.value))
-        
     }
     const cartCount = computed(()=>{
         return(cart.value as Cart).products.reduce((total,product)=>total + product.quantity,0)
