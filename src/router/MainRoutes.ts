@@ -19,7 +19,22 @@ const MainRoutes = {
     {
       name: 'Customers',
       path: '/customers',
-      component: () => import('@/views/CustomersPage.vue')
+      component: () => import('@/views/pages/CustomersPage.vue')
+    },
+    {
+      name: 'Products',
+      path: '/products',
+      component: () => import('@/views/pages/Products.vue')
+    },
+    {
+      name: 'Orders',
+      path: '/orders',
+      component: () => import('@/views/pages/Orders.vue')
+    },
+    {
+      name: 'Cart',
+      path: '/cartItems',
+      component: () => import('@/views/pages/Cart.vue')
     },
 
     {

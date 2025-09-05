@@ -9,7 +9,8 @@ import {
   BgColorsOutlined,
   BarcodeOutlined,
   CrownOutlined,
-  UserOutlined 
+  UserOutlined,
+  ShoppingCartOutlined
 } from '@ant-design/icons-vue';
 
 export interface menu {
@@ -35,11 +36,27 @@ const sidebarItem: menu[] = [
     icon: DashboardOutlined,
     to: '/dashboard'
   },
-  {header: 'customers'},
+  {header: 'Customers'},
   {
     title:'All Customers',
     icon: UserOutlined,
     to:'/customers'
+  },
+  {header: 'products'},
+  {
+    title:'products',
+    icon: ShoppingCartOutlined,
+    to:'/products'
+  },
+  {
+    title:'carts',
+    icon: ShoppingCartOutlined,
+    to:'/cartItems'
+  },
+  {
+    title:'Orders',
+    icon: CrownOutlined,
+    to:'/orders'
   },
   { header: 'Authentication' },
   {

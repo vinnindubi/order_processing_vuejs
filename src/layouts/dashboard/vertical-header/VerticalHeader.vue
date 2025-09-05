@@ -1,14 +1,23 @@
 <script setup lang="ts">
 import { useCustomizerStore } from '../../../stores/customizer';
 // icons
-import { MenuFoldOutlined, SearchOutlined, GithubOutlined } from '@ant-design/icons-vue';
+import { MenuFoldOutlined, SearchOutlined, GithubOutlined,ShoppingCartOutlined } from '@ant-design/icons-vue';
 
 // dropdown imports
 import NotificationDD from './NotificationDD.vue';
 import Searchbar from './SearchBarPanel.vue';
 import ProfileDD from './ProfileDD.vue';
+import { useCartStore} from '@/stores/cart';
+import { storeToRefs } from 'pinia';
 
 const customizer = useCustomizerStore();
+const cartStore = useCartStore();
+const {cartCount}=storeToRefs(cartStore)
+function openCart(){
+
+}
+
+
 </script>
 
 <template>
@@ -74,6 +83,16 @@ const customizer = useCustomizerStore();
     <!---right part -->
     <!-- ---------------------------------------------- -->
 
+    <!-- ------------------- -->
+    <!-- Cart icon -->
+    <!-- --------- -->
+
+    <v-btn  icon rounded="sm" :to="{ path: '/cartItems' }">
+      <v-badge :content="cartCount" color="primary" offset-x="-4" offset-y="-5">
+        <ShoppingCartOutlined :style="{ fontSize: '20px' }" /></v-badge>  
+    </v-btn>
+
+
     <!-- ---------------------------------------------- -->
     <!-- Github -->
     <!-- ---------------------------------------------- -->
@@ -83,7 +102,7 @@ const customizer = useCustomizerStore();
       color="darkText"
       rounded="sm"
       variant="text"
-      href="https://github.com/codedthemes/mantis-free-vuetify-vuejs-admin-template"
+      href="https://github.com/vinnindubi/order_processing_vuejs"
       target="_blank"
     >
       <GithubOutlined :style="{ fontSize: '16px' }" />
