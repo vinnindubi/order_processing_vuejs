@@ -44,6 +44,9 @@ function loadCartInstance(){
         const item = (cart.value as Cart).products.find((p) => p.id === productId);
         return item ? item.quantity : 0;
         })
-        }
-    return{cart,loadCartInstance,addToCart,removeFromCart,getQuantity,cartCount}
+    }
+    function resetState(){
+        localStorage.removeItem('cart')
+    }
+    return{cart,loadCartInstance,addToCart,removeFromCart,getQuantity,resetState,cartCount}
 });
