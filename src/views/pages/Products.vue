@@ -20,7 +20,7 @@ function addToCart(product){
 }
 function removeItem(product){
   cartStore.removeFromCart(product.id)
-  alert('removed')
+  alert('removed successfully')
 }
 
 console.log(cartCount.value);
