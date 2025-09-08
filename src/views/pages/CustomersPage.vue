@@ -20,9 +20,11 @@
 </script>
 <template>
     <h3>This is the customers page</h3>
-    <div v-if="isLoading">
-        <p>Loading Customers ...</p>
-    </div>
+     <!-- Vuetify Skeleton Loader -->
+     <v-skeleton-loader v-if="isLoading" type="card">
+        
+     </v-skeleton-loader>
+
     <v-table  v-else density="compact" striped="even">
         <thead>
             <tr>
