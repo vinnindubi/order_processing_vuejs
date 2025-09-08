@@ -51,7 +51,7 @@ function removeItem(product){
             <v-btn color="primary" @click="makeOrder(cart)">
                 Make Order
             </v-btn>
-           
+           <v-btn  to="/products" color="primary">Continue Shopping</v-btn>
         </v-card-actions>
         
     </v-card>

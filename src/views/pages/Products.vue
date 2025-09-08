@@ -56,13 +56,16 @@ function removeItem(product){
               <v-btn color="primary" @click="addToCart(product)">
                 Add To Cart
               </v-btn>
+              <router-link to="/cartItems">
               <v-card v-if="cartStore.getQuantity(product.id).value > 0">
+                
                 {{ cartStore.getQuantity(product.id).value }}
               </v-card>
+              </router-link>
            
-              <v-btn color="primary" @click='removeItem(product)'>
+              <v-bt color="primary" @click='removeItem(product)'>
                  Remove
-              </v-btn>
+              </v-bt>
 
             </v-card-actions>
           </v-card>

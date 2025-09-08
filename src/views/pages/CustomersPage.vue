@@ -2,17 +2,28 @@
     import axios from 'axios'
     import {ref, onMounted} from 'vue'
     const customers =ref([]);
-    onMounted(
+    const isLoading=ref(true) 
+    onMounted( 
         async()=>{
+            try{
             const url= 'http://localhost:8000/api/customers';
             const response = await axios.get(url);
             customers.value=response.data;
+        } catch(error){
+            console.error("Failed to fetch customers:", error)
         }
+        finally{
+            isLoading.value=false
+        }
+    }
     );
 </script>
 <template>
     <h3>This is the customers page</h3>
-    <v-table density="compact" striped="even">
+    <div v-if="isLoading">
+        <p>Loading Customers ...</p>
+    </div>
+    <v-table  v-else density="compact" striped="even">
         <thead>
             <tr>
                 <th class="text-left">#ID</th>
